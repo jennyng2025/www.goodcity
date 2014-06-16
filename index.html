@@ -5,155 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="bower_components/modernizr/modernizr.js"></script>
+    <style>
+		body {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.full-width {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: initial;
+		}
+		#content {
+			height: 100%;
+			position: relative;
+			min-height:100vh;
+		}
+		#video-overlay {
+			background-color: #002450;
+			opacity: 0.7;
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			/** To edit this background, follow this link:
+			http://svgeneration.com/generate/GPlay?height=38&width=38&background=002450&overlay=ffffff&weight=1&padding=0.2&
+			*/
+			background-color: #002450;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMjI5MicgaGVpZ2h0PScxMTUyJyB2aWV3Qm94PScwIDAgNDU4LjQwMDAwMDAwMDAwMDAzIDIzMC4zOTk5OTk5OTk5OTk5OCc+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0ncycgZmlsbD0nI2ZmZmZmZicgZD0nTTAsMGwzOCAxOWwtMzgsMTl6Jy8+Cgk8L2RlZnM+Cgk8ZyBpZD0nYic+Cgk8dXNlIHg9Jy0zOCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScwJyB5PScwLjInIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0zOCcgeT0nMTkuNCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM4JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDQnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScwJyB5PSc3NycgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM4JyB5PSc5Ni4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSczOC4yJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy03Ni4yJyB5PScwLjInIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wNCcgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzM4LjInIHk9JzE5LjQnIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy03Ni4yJyB5PSczOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSczOC4yJyB5PSc1Ny44JyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctNzYuMicgeT0nNzcnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzM4LjInIHk9Jzk2LjInIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc3Ni40JyB5PScwLjInIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nMTkuNCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nNzYuNCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTExNC40JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nNzYuNCcgeT0nNzcnIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nOTYuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTE0LjYwMDAwMDAwMDAwMDAxJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xNTIuNjAwMDAwMDAwMDAwMDInIHk9JzAuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTE0LjYwMDAwMDAwMDAwMDAxJyB5PScxOS40JyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMTUyLjYwMDAwMDAwMDAwMDAyJyB5PSczOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxMTQuNjAwMDAwMDAwMDAwMDEnIHk9JzU3LjgnIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xNTIuNjAwMDAwMDAwMDAwMDInIHk9Jzc3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxMTQuNjAwMDAwMDAwMDAwMDEnIHk9Jzk2LjInIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xOTAuOCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nMTUyLjgnIHk9JzAuMicgZmlsbC1vcGFjaXR5PScwLjA0JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE5MC44JyB5PScxOS40JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxNTIuOCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE5MC44JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxNTIuOCcgeT0nNzcnIGZpbGwtb3BhY2l0eT0nMC4wMScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xOTAuOCcgeT0nOTYuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTkxJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0yMjkuMDAwMDAwMDAwMDAwMDMnIHk9JzAuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzE5MScgeT0nMTkuNCcgZmlsbC1vcGFjaXR5PScwLjA0JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nMzguNicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzE5MScgeT0nNTcuOCcgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nNzcnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzE5MScgeT0nOTYuMicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTwvZz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nMTE1LjE5OTk5OTk5OTk5OTk5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nLTQ1OC4yMDAwMDAwMDAwMDAwNScgeT0nLTc2LjgnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nMjI5LjIwMDAwMDAwMDAwMDAyJyB5PSctMTUzLjYnIHRyYW5zZm9ybT0nbWF0cml4KDEgMCAwIC0xIDAgMCknIHhsaW5rOmhyZWY9JyNiJyAvPgoJPHVzZSB4PScyMjkuMjAwMDAwMDAwMDAwMDInIHk9Jy0yNjguOCcgdHJhbnNmb3JtPSdtYXRyaXgoMSAwIDAgLTEgMCAwKScgeGxpbms6aHJlZj0nI2InIC8+Cjwvc3ZnPgo=');
+		}
+		#menu {
+			background-color: #FFF;
+			height: 100vh;
+		}
+		#menu ul {
+			width: 100%;
+			
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			background-color: #002450;
+		}
+		#menu li {
+			display: block;
+			min-height: 37px;
+			height: auto!important;
+			height: 37px;
+			padding: 30px 5px;
+			font-size: 11px;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			color: #FFF;
+		}
+		#menu li i {
+			color: #FFF;
+			padding-top: 8px
+		}
+		#menu li#menu-1 {
+			display: block;
+			min-height: 60px;
+			height: auto!important;
+			height: 60px;
+		}
+		#menu li#menu-2 {
+			background-color: #462445
+		}
+		#menu li#menu-3 {
+			background-color: #673453
+		}
+		#menu li#menu-4 {
+			background-color: #ffa755
+		}
+		#menu li#menu-5 {
+			background-color: #EB624C
+		}
+		.Absolute-Centerx {
+		  width: 30%;
+		  height: 50%;
+		  overflow: hidden;
+		  margin: auto;
+		  position: absolute;
+		  top: 0; left: 0; bottom: 0; right: 0;
+		}
+		#text {
+			z-index: 3;
+		}
+		#text h1 {
+			color: #FFF;
+			font-weight: normal;
+			text-transform: uppercase;
+			padding: 8px 5px;
+			border: 2px solid #FFF;
+			text-align: center;
+			vertical-align: middle;
+		}
+		#video-background { 
+		  position: absolute;
+		  bottom: 0px; 
+		  right: 0px; 
+		  min-width: 100%; 
+		  min-height: 100%; 
+		  width: auto; 
+		  height: auto; 
+		  overflow: hidden;
+		  z-index: 1;
+		}
+		</style>
   </head>
   <body>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
-      </div>
-    </div>
     
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="panel">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-          <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
-        </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://twitter.com/foundationzurb">@foundationzurb</a><br />Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-            </div>        
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic grid:</h5>
-        <!-- Grid Example -->
-
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="callout panel">
-              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-6 medium-6 columns">
-            <div class="callout panel">
-              <p>Six columns</p>
-            </div>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <div class="callout panel">
-              <p>Six columns</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="callout panel">
-              <p>Four columns</p>
-            </div>
-          </div>
-        </div>
-        
-        <hr />
-                
-        <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-        <form>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-12.columns" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <label>Input Label</label>
-              <input type="text" placeholder="large-4.columns" />
-            </div>
-            <div class="large-4 medium-4 columns">
-              <div class="row collapse">
-                <label>Input Label</label>
-                <div class="small-9 columns">
-                  <input type="text" placeholder="small-9.columns" />
-                </div>
-                <div class="small-3 columns">
-                  <span class="postfix">.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Select Box</label>
-              <select>
-                <option value="husker">Husker</option>
-                <option value="starbuck">Starbuck</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 medium-6 columns">
-              <label>Choose Your Favorite</label>
-              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-            </div>
-            <div class="large-6 medium-6 columns">
-              <label>Check these out</label>
-              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Textarea Label</label>
-              <textarea placeholder="small-12.columns"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>     
-
-      <div class="large-4 medium-4 columns">
-        <h5>Try one of these buttons:</h5>
-        <p><a href="#" class="small button">Simple Button</a><br/>
-        <a href="#" class="small radius button">Radius Button</a><br/>
-        <a href="#" class="small round button">Round Button</a><br/>            
-        <a href="#" class="medium success button">Success Btn</a><br/>
-        <a href="#" class="medium alert button">Alert Btn</a><br/>
-        <a href="#" class="medium secondary button">Secondary Btn</a></p>           
-        <div class="panel">
-          <h5>So many components, girl!</h5>
-          <p>A whole kitchen sink of goodies comes with Foundation. Checkout the docs to see them all, along with details on making them your own.</p>
-          <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
-        </div>
-      </div>
+    <div class="row full-width collapse">
+	    <div class="large-1 medium-1 columns" id="menu">
+		    <ul>
+				<li id="menu-1">
+					Logo/Home<br>
+					<i class="fa fa-home fa-3x"></i>
+				</li>
+				<li id="menu-2">
+					Give Stuff<br>
+					<i class="fa fa-gift fa-3x"></i>
+				</li>
+				<li id="menu-3">
+					How it works<br>
+					<i class="fa fa-question fa-3x"></i>
+				</li>
+				<li id="menu-4">
+					Get Stuff<br>
+					<i class="fa fa-group fa-3x"></i>
+				</li>
+				<li id="menu-5">
+					About us<br>
+					<i class="fa fa-info fa-3x"></i>
+				</li>
+			</ul>
+	    </div>
+		 <div class="large-11 medium-11 columns collapse" id="content">
+			<div id="text" class="Absolute-Center">
+			<h1>Stuff here</h1>
+			</div>
+			<video type='video/webm;codecs="vp8, vorbis"' id="video-background" preload="auto" preload autoplay loop muted>
+				<source src="assets/media/test.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+				<source src="assets/media/test.webm" type="video/webm; codecs=vp8,vorbis">
+			</video>
+	    </div>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
