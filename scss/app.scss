@@ -1,20 +1,30 @@
 @font-face {
-    font-family: 'museo700';
-    src: url('/fonts/museo700-regular-webfont.eot');
-    src: url('/fonts/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/museo700-regular-webfont.woff') format('woff'),
-         url('/fonts/museo700-regular-webfont.ttf') format('truetype'),
-         url('/fonts/museo700-regular-webfont.svg#museo700') format('svg');
+    font-family: 'Museo 700';
+    src: url('/fonts/museo_700.eot');
+    src: url('/fonts/museo_700.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/museo_700.woff') format('woff'),
+         url('/fonts/museo_700.ttf') format('truetype'),
+         url('/fonts/museo_700.svg#museo_700') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'museo_sans500';
-    src: url('/fonts/museosans_500-webfont.eot');
-    src: url('/fonts/museosans_500-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/museosans_500-webfont.woff') format('woff'),
-         url('/fonts/museosans_500-webfont.ttf') format('truetype'),
-         url('/fonts/museosans_500-webfont.svg#museo_sans500') format('svg');
+    font-family: 'Museo Sans 300';
+    src: url('/fonts/museo_sans_300.eot');
+    src: url('/fonts/museo_sans_300.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/museo_sans_300.woff') format('woff'),
+         url('/fonts/museo_sans_300.ttf') format('truetype'),
+         url('/fonts/museo_sans_300.svg#museo_sans_300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo Sans 700';
+    src: url('/fonts/museo_sans_700.eot');
+    src: url('/fonts/museo_sans_700.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/museo_sans_700.woff') format('woff'),
+         url('/fonts/museo_sans_700.ttf') format('truetype'),
+         url('/fonts/museo_sans_700.svg#museo_sans_700') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -60,6 +70,6 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-h3 {
-	font-family: "museo_sans500","Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+h3, h4 {
+	font-family: "Museo Sans 700", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
