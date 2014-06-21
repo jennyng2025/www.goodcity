@@ -22,14 +22,10 @@
 			heightx: 100%;
 			min-height:100vh;
 		}
-		#menu {
+		.menu {
 			background-color: #FFF;
-			height: 100vh;
-			position: fixed;
-			left: 0;
-			top: 0;
 		}
-		#menu ul {
+		.menu ul {
 			width: 100%;
 			overflow: hidden;
 			margin: 0;
@@ -37,7 +33,7 @@
 			list-style-type: none;
 			background-color: #002450;
 		}
-		#menu li {
+		.menu li {
 			display: block;
 			min-height: 37px;
 			height: auto!important;
@@ -48,26 +44,33 @@
 			text-align: center;
 			color: #FFF;
 		}
-		#menu li i {
+		.menu li i {
 			font-size: 2.8em;
 			color: #FFF;
 			padding-bottom: 8px
 		}
-		#menu li#menu-1 {
+		.menu li#menu-1 {
 			display: block;
 			min-height: 60px;
 			height: auto!important;
 			height: 60px;
 			background-color: #FB4951;
 		}
-		#menu li#menu-2 {
+		.menu li#menu-2 {
 			background-color: #0A3A61
 		}
-		#menu li#menu-3 {
+		.menu li#menu-3 {
 			background-color: #466684
 		}
-		#menu li#menu-4 {
+		.menu li#menu-4 {
 			background-color: #97A7B9
+		}
+		.left-off-canvas-menu {
+			position: fixed;
+		}
+		.menu-toggle {
+			position: fixed;
+			z-index: 999;
 		}
 		.screen {
 			width: 100%;
@@ -221,10 +224,16 @@
 				width: auto;
 				margin: 0;
 			}
-			#menu li {
+			.menu {
+				height: 100vh;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			.menu li {
 				font-size: 0.9em;
 			}
-			#menu li i {
+			.menu li i {
 				font-size: 2.5em;
 			}
 			#intro {
@@ -257,7 +266,7 @@
 </head>
 <body>
 	<div class="row full-width collapse">
-		<div class="large-2 columns show-for-large-up" id="menu">
+		<div class="large-2 medium-2 columns show-for-medium-up menu" id="menu">
 			<ul>
 				<li id="menu-1">
 					<i class="fa fa-home"></i><br>
@@ -277,70 +286,100 @@
 				</li>
 			</ul>
 		</div>
-		<div class="large-14 medium-16 columns collapse" id="content">
-			<div class="screen current" id="intro">
-				<div id="intro-text">
-					<h1>GoodCity<em>.HK</em><br><em class="chinese">好人好市</em></h1>
-					<h3>Your quality donated items can help people in need.</h3>
-					<div id="watch"><h2><a href="#"><i class="fa fa-play"></i>Watch Our Trailer</a></h2></div>
-					<p class="scroll scroll-text"></p>
-					<div class="scroll scroll-arrow scroll-down">
-						<p>Or keep scrolling</p>
-						<a href="#app-items" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
+		<div class="large-14 medium-14 columns collapse" id="content">
+			<div class="off-canvas-wrap" data-offcanvas>
+				<div class="inner-wrap">
+					<nav class="tab-bar show-for-small menu-toggle">
+						<section class="left-small">
+							<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+						</section>
+					</nav>
+					<aside class="left-off-canvas-menu show-for-small menu">
+					  <ul>
+							<li id="menu-1">
+								<i class="fa fa-home"></i><br>
+								Home
+							</li>
+							<li id="menu-2">
+								<i class="fa fa-pencil"></i><br>
+								About
+							</li>
+							<li id="menu-3">
+								<i class="fa fa-plus"></i><br>
+								Get Involved
+							</li>
+							<li id="menu-4">
+								<i class="fa fa-question fa-3x"></i><br>
+								FAQ
+							</li>
+						</ul>
+					</aside>
+					<div class="screen current" id="intro">
+						<div id="intro-text">
+							<h1>GoodCity<em>.HK</em><br><em class="chinese">好人好市</em></h1>
+							<h3>Your quality donated items can help people in need.</h3>
+							<div id="watch"><h2><a href="#"><i class="fa fa-play"></i>Watch Our Trailer</a></h2></div>
+							<p class="scroll scroll-text"></p>
+							<div class="scroll scroll-arrow scroll-down">
+								<p>Or keep scrolling</p>
+								<a href="#app-items" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
+							</div>
+						</div>
+						<video type="video/webm;codecs='vp8, vorbis'" class="show-for-large-up" id="video-background" preload="auto" preload autoplay loop muted>
+							<source src="/assets/media/test.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+							<source src="/assets/media/test.webm" type="video/webm; codecs=vp8,vorbis">
+						</video>
+						<div class="show-for-large-up" id="video-overlay"></div>
 					</div>
-				</div>
-				<video type="video/webm;codecs='vp8, vorbis'" class="show-for-large-up" id="video-background" preload="auto" preload autoplay loop muted>
-					<source src="/assets/media/test.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
-					<source src="/assets/media/test.webm" type="video/webm; codecs=vp8,vorbis">
-				</video>
-				<div class="show-for-large-up" id="video-overlay"></div>
-			</div>
-			<div class="row screen" id="app-items">
-				<div class="large-5 large-offset-1 medium-16 columns first">
-					<h1>Not sure if your items are needed?</h1>
-					<p>Expert volunteers review your items in minutes. There's no better way to find out if your quality donated goods can assist those in need. <a href="">Learn more</a></p>
-					<p><a href="#" class="button large">Start Offering Your Goods</a></p>
-				</div>
-				<div class="large-9 large-offset-1 medium-16 columns second">
-					<img src="/assets/images/intro-app-items.png">
-				</div>
-				<div class="scroll scroll-arrow scroll-up">
-					<a href="#intro" class="cycle-prev"><i class="fa fa-chevron-circle-up"></i></a>
-				</div>
-				<div class="scroll scroll-arrow scroll-down">
-					<a href="#app-transport" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
-				</div>
-			</div>
-			<div class="row screen" id="app-transport">
-				<div class="large-5 large-offset-1 medium-16 columns first">
-					<h1>What about transport?</h1>
-					<p>We provide transport options you can choose from instantly. Choose rapid commercial removal or wait a little longer for our subsidised collection service. <a href="">Learn more</a></p>
-					<p><a href="#" class="button large">Start Offering Your Goods</a></p>
-				</div>
-				<div class="large-9 large-offset-1 medium-16 columns second">
-					<img src="/assets/images/intro-app-transport.png">
-				</div>
-				<div class="scroll scroll-arrow scroll-up">
-					<a href="#app-items" class="cycle-prev"><i class="fa fa-chevron-circle-up"></i></a>
-				</div>
-				<div class="scroll scroll-arrow scroll-down">
-					<a href="#app-donate" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
-				</div>
-			</div>
-			<div class="row screen end" id="app-donate">
-				<div class="large-5 large-offset-1 medium-16 columns first">
-					<h1>Donate with confidence</h1>
-					<p>GoodCity.HK is operated by the Crossroads Foundation. We've been handling donated goods in Hong Kong since 1997. Thousands of private and corporate donors trust us to ensure their quality items help those in genuine need each year. <a href="">Learn more</a></p>
-					<p><a href="#" class="button large">Start Offering Your Goods</a></p>
-				</div>
-				<div class="large-9 large-offset-1 medium-16 columns second">
-					<img src="/assets/images/intro-app-donate.png">
-				</div>
-				<div class="scroll scroll-arrow scroll-up">
-					<a href="#app-transport" class="cycle-next"><i class="fa fa-chevron-circle-up"></i></a>
+					<div class="row screen" id="app-items">
+						<div class="large-5 medium-offset-1 medium-15 columns first">
+							<h1>Not sure if your items are needed?</h1>
+							<p>Expert volunteers review your items in minutes. There's no better way to find out if your quality donated goods can assist those in need. <a href="">Learn more</a></p>
+							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
+						</div>
+						<div class="large-9 large-offset-1 medium-16 columns second">
+							<img src="/assets/images/intro-app-items.png">
+						</div>
+						<div class="scroll scroll-arrow scroll-up">
+							<a href="#intro" class="cycle-prev"><i class="fa fa-chevron-circle-up"></i></a>
+						</div>
+						<div class="scroll scroll-arrow scroll-down">
+							<a href="#app-transport" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
+						</div>
+					</div>
+					<div class="row screen" id="app-transport">
+						<div class="large-5 medium-offset-1 medium-15 columns first">
+							<h1>What about transport?</h1>
+							<p>We provide transport options you can choose from instantly. Choose rapid commercial removal or wait a little longer for our subsidised collection service. <a href="">Learn more</a></p>
+							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
+						</div>
+						<div class="large-9 large-offset-1 medium-16 columns second">
+							<img src="/assets/images/intro-app-transport.png">
+						</div>
+						<div class="scroll scroll-arrow scroll-up">
+							<a href="#app-items" class="cycle-prev"><i class="fa fa-chevron-circle-up"></i></a>
+						</div>
+						<div class="scroll scroll-arrow scroll-down">
+							<a href="#app-donate" class="cycle-next"><i class="fa fa-chevron-circle-down"></i></a>
+						</div>
+					</div>
+					<div class="row screen end" id="app-donate">
+						<div class="large-5 medium-offset-1 medium-15 columns first">
+							<h1>Donate with confidence</h1>
+							<p>GoodCity.HK is operated by the Crossroads Foundation. We've been handling donated goods in Hong Kong since 1997. Thousands of private and corporate donors trust us to ensure their quality items help those in genuine need each year. <a href="">Learn more</a></p>
+							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
+						</div>
+						<div class="large-9 large-offset-1 medium-16 columns second">
+							<img src="/assets/images/intro-app-donate.png">
+						</div>
+						<div class="scroll scroll-arrow scroll-up">
+							<a href="#app-transport" class="cycle-next"><i class="fa fa-chevron-circle-up"></i></a>
+						</div>
+					</div>
+					<a class="exit-off-canvas show-for-small"></a>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</div>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/foundation/js/foundation.min.js"></script>
