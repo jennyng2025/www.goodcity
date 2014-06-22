@@ -68,9 +68,26 @@
 		.left-off-canvas-menu {
 			position: fixed;
 		}
+		.tab-bar {
+			background-color: transparent;
+		}
+		.tab-bar a {
+			font-family: "Museo Sans 700", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+			color: #FB4951;
+			text-decoration: none;
+		}
+		.tab-bar a h4 {
+			font-weight: normal;
+			font-size: 0.8em;
+			text-transform: uppercase;
+			padding-left: 0.4em;
+		}
 		.menu-toggle {
-			position: fixed;
+			/*position: fixed;*/
 			z-index: 999;
+		}
+		.menu-toggle section {
+			border: 0;
 		}
 		.screen {
 			width: 100%;
@@ -205,8 +222,23 @@
 		.end {
 			padding-bottom: 3em;
 		}
+		#top-link a {
+			display: block;
+			display: none;
+			z-index: 999; 
+			position: fixed;
+			top: 0;
+			right: 0;
+			padding: 6px;
+			background-color: #FB4951;
+			opacity: 0.8;
+			font-size: 26px;
+			text-align: center;
+			color: #fff;
+		}
+
 		/* Large */
-		@media (min-width: 1025px) {
+		@media (min-width: 641px) {
 			.scroll {
 				display: block;
 			}
@@ -261,6 +293,9 @@
 			.end {
 				padding-bottom: 0;
 			}
+			#top-link {
+				display: none;
+			}
 		}
 	</style>
 </head>
@@ -291,7 +326,7 @@
 				<div class="inner-wrap">
 					<nav class="tab-bar show-for-small menu-toggle">
 						<section class="left-small">
-							<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+							<a class="left-off-canvas-toggle menu-icon" href="#"><span></span> <h4 class="title">Menu</h4></a>
 						</section>
 					</nav>
 					<aside class="left-off-canvas-menu show-for-small menu">
@@ -377,6 +412,7 @@
 						</div>
 					</div>
 					<a class="exit-off-canvas show-for-small"></a>
+					<div id="top-link"><a href="#content"><i class="fa fa-arrow-up"></i></a></div>
 				</div>
 			</div>
 		</div>	
@@ -436,6 +472,16 @@
 			    }
 			    event.preventDefault();
 			});
+			
+			if (matchMedia(Foundation.media_queries['small']).matches){
+				$(document).scroll(function() {
+					if ($(document).scrollTop() >= 150) {
+						$('#top-link a').show();
+					} else {
+						$('#top-link a').hide();
+					}
+				});
+  			};
 		});
 	</script>
 </body>
