@@ -419,6 +419,7 @@
 	</div>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/foundation/js/foundation.min.js"></script>
+	<script src="/js/jquery.debounce.min.js"></script>
 	<script src="/js/jquery.scrollTo.min.js"></script>
 	<script src="/js/jquery.mousewheel.min.js"></script>
 	<script src="/js/app.js"></script>
@@ -426,53 +427,87 @@
 		$(document).ready(function(){
 
 			// Smoothly scroll to the anchor on click
-			$('a[href*=#]:not([href=#])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-					|| location.hostname == this.hostname) {
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-						if (target.length) {
-							$('html,body').animate({
-								scrollTop: target.offset().top
-							}, 600);
-							return false;
-						}
-					}
-			});
-
-			// Smoothly scroll to the anchor on mousewheel
-			var $current, flag = false;
-			$('body').mousewheel(function(event, delta) {
-			    if (flag) { return false; }
-			    $current = $('div.current');
-			    if (delta > 0) {
-			        $prev = $current.prev();
-			        if ($prev.length) {
-			            flag = true;
-			            $('body').scrollTo($prev, 600, {
-			                onAfter : function(){
-			                    flag = false;
-			                }
-			            });
-			            $current.removeClass('current');
-			            $prev.addClass('current');
-			        }
-			    } else {
-			        $next = $current.next();
-			        if ($next.length) {
-			            flag = true;
-			            $('body').scrollTo($next, 600, {
-			                onAfter : function(){
-			                    flag = false;
-			                }
-			            });
-			            $current.removeClass('current');
-			            $next.addClass('current');
-			        }
-			    }
-			    event.preventDefault();
+			function filterPath(string) {
+			return string
+			 .replace(/^\//,'')
+			 .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			 .replace(/\/$/,'');
+			}
+			var locationPath = filterPath(location.pathname);
+			var scrollElem = scrollableElement('html', 'body');
+			
+			$('a[href*=#]').each(function() {
+			 var thisPath = filterPath(this.pathname) || locationPath;
+			 if (  locationPath == thisPath
+			 && (location.hostname == this.hostname || !this.hostname)
+			 && this.hash.replace(/#/,'') ) {
+			   var $target = $(this.hash), target = this.hash;
+			   if (target) {
+			     var targetOffset = $target.offset().top;
+			     $(this).click(function(event) {
+			       event.preventDefault();
+			       $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+			         location.hash = target;
+			       });
+			     });
+			   }
+			 }
 			});
 			
+			// use the first element that is "scrollable"
+			function scrollableElement(els) {
+			 for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+			   var el = arguments[i],
+			       $scrollElement = $(el);
+			   if ($scrollElement.scrollTop()> 0) {
+			     return el;
+			   } else {
+			     $scrollElement.scrollTop(1);
+			     var isScrollable = $scrollElement.scrollTop()> 0;
+			     $scrollElement.scrollTop(0);
+			     if (isScrollable) {
+			       return el;
+			     }
+			   }
+			 }
+			 return [];
+			}
+
+			// Smoothly scroll to the anchor on mousewheel
+				
+			var $current, flag = false;
+			//$('body').mousewheel(function(event, delta) {
+			$('body').on('mousewheel', $.debounce( 50, function(event, delta) {
+				if (flag) { return false; }
+					$current = $('div.current');
+					if (delta > 0) {
+						$prev = $current.prev();
+					if ($prev.length) {
+						flag = true;
+						$('body').scrollTo($prev, 600, {
+							onAfter : function(){
+								flag = false;
+							}
+						});
+						$current.removeClass('current');
+						$prev.addClass('current');
+					}
+				} else {
+					$next = $current.next();
+					if ($next.length) {
+						flag = true;
+						$('body').scrollTo($next, 600, {
+							onAfter : function(){
+								flag = false;
+							}
+						});
+						$current.removeClass('current');
+						$next.addClass('current');
+					}
+				}
+				event.preventDefault();
+			}));
+				
 			if (matchMedia(Foundation.media_queries['small']).matches){
 				$(document).scroll(function() {
 					if ($(document).scrollTop() >= 150) {
@@ -481,7 +516,8 @@
 						$('#top-link a').hide();
 					}
 				});
-  			};
+			};
+			
 		});
 	</script>
 </body>
