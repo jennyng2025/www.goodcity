@@ -462,7 +462,7 @@
 			 }
 			});
 			
-			// use the first element that is "scrollable"
+			// Use the first element that is "scrollable"
 			function scrollableElement(els) {
 			 for (var i = 0, argLength = arguments.length; i <argLength; i++) {
 			   var el = arguments[i],
@@ -481,77 +481,25 @@
 			 return [];
 			}
 			
+			// Scroll arrow position and behaviour
 			var width1 = $('.menu').outerWidth();
 			var width2 = $('#content').outerWidth();
 			$('.scroll').css({
 				left: ((width2/2) + (width1)) + "px"
 			});
-			//$('.screen').scroll(function() {
-			//	$('.scroll').hide();
-			//});
+			$(window).resize(function() {
+				var width1 = $('.menu').outerWidth();
+				var width2 = $('#content').outerWidth();
+				$('.scroll').css({
+					left: ((width2/2) + (width1)) + "px"
+				});
+			});
 			$('.screen').mouseover(function(){
 				var linkprev = $(this).prev().attr('id');
 				var linknext = $(this).next().attr('id');
 				$(this).find('.scroll-up').attr('href',linkprev);
 				$(this).find('.scroll-down').attr('href',linknext);
 				$(this).find('.scroll').show();
-			});
-			//$('.screen').mouseleave(function(){
-				//$(this).find('.scroll').hide();
-			//});
-			
-			// Smoothly scroll to the anchor on mousewheel
-			/*	
-			var $current, flag = false;
-			//$('body').mousewheel(function(event, delta) {
-			$('body').on('mousewheel', $.debounce( 50, function(event, delta) {
-				if (flag) { return false; }
-					$current = $('div.current');
-					if (delta > 0) {
-						$prev = $current.prev();
-					if ($prev.length) {
-						flag = true;
-						$('body').scrollTo($prev, 600, {
-							onAfter : function(){
-								flag = false;
-							}
-						});
-						$current.removeClass('current');
-						$prev.addClass('current');
-					}
-				} else {
-					$next = $current.next();
-					if ($next.length) {
-						flag = true;
-						$('body').scrollTo($next, 600, {
-							onAfter : function(){
-								flag = false;
-							}
-						});
-						$current.removeClass('current');
-						$next.addClass('current');
-					}
-				}
-				event.preventDefault();
-			}));
-				
-			if (matchMedia(Foundation.media_queries['small']).matches){
-				$(document).scroll(function() {
-					if ($(document).scrollTop() >= 150) {
-						$('#top-link a').show();
-					} else {
-						$('#top-link a').hide();
-					}
-				});
-			};
-			*/
-			
-		});
-		$(window).resize(function() {
-			var width1 = $('.menu').outerWidth();
-			var width2 = $('#content').outerWidth();
-			$('.scroll').css({
-				left: ((width2/2) + (width1)) + "px"
 			});
 		});
 	</script>
