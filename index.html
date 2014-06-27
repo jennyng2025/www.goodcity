@@ -83,7 +83,7 @@
 			padding-left: 0.4em;
 		}
 		.menu-toggle {
-			/*position: fixed;*/
+			position: fixed;
 			z-index: 999;
 		}
 		.menu-toggle section {
@@ -196,6 +196,7 @@
 		.scroll, 
 		.scroll-text {
 			display: none;
+			visibility: hidden;
 		}
 		.end {
 			padding-bottom: 3em;
@@ -220,6 +221,7 @@
 			.scroll, 
 			.scroll-text {
 				display: block;
+				visibility: visible;
 			}
 			.scroll-arrow {
 				width: 150px;
@@ -234,7 +236,7 @@
 				width: 150px;
 				position: absolute;
 				left: 50%;
-				bottom: 90px;
+				bottom: 70px;
 				margin-left: -75px;
 				text-align: center;
 			}
@@ -309,7 +311,7 @@
 </head>
 <body>
 	<div class="row full-width collapse">
-		<div class="large-2 medium-2 columns show-for-medium-up menu" id="menu">
+		<div class="large-2 medium-2 columns show-for-medium-up menu" id="menu-large">
 			<ul>
 				<li id="menu-1">
 					<i class="fa fa-home"></i><br>
@@ -379,7 +381,7 @@
 							<p>Expert volunteers review your items in minutes. There's no better way to find out if your quality donated goods can assist those in need. <a href="">Learn more</a></p>
 							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
 						</div>
-						<div class="large-9 large-offset-1 medium-16 columns second">
+						<div class="large-9 large-offset-1 medium-15 medium-offset-1 columns second">
 							<img src="/assets/images/intro-app-items.png">
 						</div>
 						<div class="scroll scroll-arrow scroll-up">
@@ -395,7 +397,7 @@
 							<p>We provide transport options you can choose from instantly. Choose rapid commercial removal or wait a little longer for our subsidised collection service. <a href="">Learn more</a></p>
 							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
 						</div>
-						<div class="large-9 large-offset-1 medium-16 columns second">
+						<div class="large-9 large-offset-1 medium-15 medium-offset-1 columns second">
 							<img src="/assets/images/intro-app-transport.png">
 						</div>
 						<div class="scroll scroll-arrow scroll-up">
@@ -411,7 +413,7 @@
 							<p>GoodCity.HK is operated by the Crossroads Foundation. We've been handling donated goods in Hong Kong since 1997. Thousands of private and corporate donors trust us to ensure their quality items help those in genuine need each year. <a href="">Learn more</a></p>
 							<p><a href="#" class="button large">Start Offering Your Goods</a></p>
 						</div>
-						<div class="large-9 large-offset-1 medium-16 columns second">
+						<div class="large-9 large-offset-1 medium-15 medium-offset-1 columns second">
 							<img src="/assets/images/intro-app-donate.png">
 						</div>
 						<div class="scroll scroll-arrow scroll-up">
@@ -426,9 +428,6 @@
 	</div>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/foundation/js/foundation.min.js"></script>
-	<script src="/js/jquery.debounce.min.js"></script>
-	<script src="/js/jquery.scrollTo.min.js"></script>
-	<script src="/js/jquery.mousewheel.min.js"></script>
 	<script src="/js/app.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -443,7 +442,7 @@
 			var locationPath = filterPath(location.pathname);
 			var scrollElem = scrollableElement('html', 'body');
 			
-			$('a[href*=#]').each(function() {
+			$('.scroll a[href*=#]').each(function() {
 			 var thisPath = filterPath(this.pathname) || locationPath;
 			 if (  locationPath == thisPath
 			 && (location.hostname == this.hostname || !this.hostname)
@@ -495,12 +494,26 @@
 				});
 			});
 			$('.screen').mouseover(function(){
+				$('.scroll').hide();
 				var linkprev = $(this).prev().attr('id');
 				var linknext = $(this).next().attr('id');
 				$(this).find('.scroll-up').attr('href',linkprev);
 				$(this).find('.scroll-down').attr('href',linknext);
 				$(this).find('.scroll').show();
 			});
+			
+			// Show the 'Top' link
+			if (matchMedia(Foundation.media_queries['small']).matches){
+				$(document).scroll(function() {
+					if ($(document).scrollTop() >= 150) {
+						$('#top-link a').show();
+					} else {
+						$('#top-link a').hide();
+					}
+				});
+			};
+
+			
 		});
 	</script>
 </body>
