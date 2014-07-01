@@ -1,0 +1,297 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>GoodCity.HK 好人好市 - Your quality donated items can help people in need.</title>
+	<link rel="stylesheet" href="stylesheets/app.css">
+	<script src="bower_components/modernizr/modernizr.js"></script>
+	<style>
+		body {
+			background-color: #002450;
+			background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMjI5MicgaGVpZ2h0PScxMTUyJyB2aWV3Qm94PScwIDAgNDU4LjQwMDAwMDAwMDAwMDAzIDIzMC4zOTk5OTk5OTk5OTk5OCc+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0ncycgZmlsbD0nI2ZmZmZmZicgZD0nTTAsMGwzOCAxOWwtMzgsMTl6Jy8+Cgk8L2RlZnM+Cgk8ZyBpZD0nYic+Cgk8dXNlIHg9Jy0zOCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScwJyB5PScwLjInIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0zOCcgeT0nMTkuNCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM4JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDQnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScwJyB5PSc3NycgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTM4JyB5PSc5Ni4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSczOC4yJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy03Ni4yJyB5PScwLjInIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wNCcgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzM4LjInIHk9JzE5LjQnIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy03Ni4yJyB5PSczOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSczOC4yJyB5PSc1Ny44JyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctNzYuMicgeT0nNzcnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzM4LjInIHk9Jzk2LjInIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDInIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc3Ni40JyB5PScwLjInIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nMTkuNCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nNzYuNCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTExNC40JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nNzYuNCcgeT0nNzcnIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xMTQuNCcgeT0nOTYuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTE0LjYwMDAwMDAwMDAwMDAxJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xNTIuNjAwMDAwMDAwMDAwMDInIHk9JzAuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTE0LjYwMDAwMDAwMDAwMDAxJyB5PScxOS40JyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMTUyLjYwMDAwMDAwMDAwMDAyJyB5PSczOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxMTQuNjAwMDAwMDAwMDAwMDEnIHk9JzU3LjgnIGZpbGwtb3BhY2l0eT0nMC4wMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xNTIuNjAwMDAwMDAwMDAwMDInIHk9Jzc3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxMTQuNjAwMDAwMDAwMDAwMDEnIHk9Jzk2LjInIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xOTAuOCcgeT0nLTE5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nMTUyLjgnIHk9JzAuMicgZmlsbC1vcGFjaXR5PScwLjA0JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE5MC44JyB5PScxOS40JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDEnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxNTIuOCcgeT0nMzguNicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE5MC44JyB5PSc1Ny44JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMDMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxNTIuOCcgeT0nNzcnIGZpbGwtb3BhY2l0eT0nMC4wMScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0xOTAuOCcgeT0nOTYuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMTkxJyB5PSctMTknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0yMjkuMDAwMDAwMDAwMDAwMDMnIHk9JzAuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzE5MScgeT0nMTkuNCcgZmlsbC1vcGFjaXR5PScwLjA0JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nMzguNicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzE5MScgeT0nNTcuOCcgZmlsbC1vcGFjaXR5PScwLjAzJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nNzcnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4wMicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzE5MScgeT0nOTYuMicgZmlsbC1vcGFjaXR5PScwLjAyJyB4bGluazpocmVmPScjcycgLz4KCTwvZz4KCTx1c2UgeD0nLTIyOS4wMDAwMDAwMDAwMDAwMycgeT0nMTE1LjE5OTk5OTk5OTk5OTk5JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nLTQ1OC4yMDAwMDAwMDAwMDAwNScgeT0nLTc2LjgnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nMjI5LjIwMDAwMDAwMDAwMDAyJyB5PSctMTUzLjYnIHRyYW5zZm9ybT0nbWF0cml4KDEgMCAwIC0xIDAgMCknIHhsaW5rOmhyZWY9JyNiJyAvPgoJPHVzZSB4PScyMjkuMjAwMDAwMDAwMDAwMDInIHk9Jy0yNjguOCcgdHJhbnNmb3JtPSdtYXRyaXgoMSAwIDAgLTEgMCAwKScgeGxpbms6aHJlZj0nI2InIC8+Cjwvc3ZnPgo=');
+		}
+		.full-width {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: initial;
+		}
+		.menu {
+			background-color: #FFF;
+		}
+		.menu div {
+			width: 100%;
+			overflow: hidden;
+		}
+		.menu a {
+			display: block;
+			min-height: 37px;
+			height: auto!important;
+			height: 37px;
+			padding: 30px 5px;
+			font-size: 0.8em;
+			text-transform: uppercase;
+			text-align: center;
+			color: #FFF;
+			text-decoration: none;
+		}
+		.menu a i {
+			font-size: 2.8em;
+			color: #FFF;
+			padding-bottom: 8px
+		}
+		.menu a label {
+			color: #FFF;
+		}
+		.menu a#menu-1 {
+			display: block;
+			min-height: 60px;
+			height: auto!important;
+			height: 60px;
+			background-color: #FB4951;
+		}
+		.menu a#menu-2 {
+			background-color: #0A3A61
+		}
+		.menu a#menu-3 {
+			background-color: #466684
+		}
+		.menu a#menu-4 {
+			background-color: #97A7B9
+		}
+		.language {
+			padding: 15px 0;
+			text-align: center;
+		}
+		.language a {
+			display: inline!important;
+			color: #888;
+			text-decoration: underline;
+			text-transform: none;
+		}
+		.cr-logo a label {
+			color: #888;
+			text-transform: none;
+			text-decoration: underline;
+		}
+		.cr-logo img {
+			display: block;
+			width: 80%;
+			border-radius: 50%;
+			height: auto;
+			margin: 0 auto 5px auto;
+		}
+		.left-off-canvas-menu {
+			position: fixed;
+		}
+		.tab-bar {
+			background-color: transparent;
+		}
+		.tab-bar a {
+			font-family: "Museo Sans 700", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+			color: #FB4951;
+			text-decoration: none;
+		}
+		.tab-bar a h4 {
+			font-weight: normal;
+			font-size: 0.8em;
+			text-transform: uppercase;
+			padding-left: 0.4em;
+		}
+		.menu-toggle {
+			/*position: fixed;
+			z-index: 999;*/
+		}
+		.menu-toggle section {
+			border: 0;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		.row.last .columns {
+			padding-bottom: 10em;
+		}
+		.columns.first {
+			padding-top: 5%;
+		}
+		.columns.second {
+			padding-top: 5%;
+			text-align: center;
+		}
+		.button.small {
+			font-size: 0.8em;
+			text-transform: uppercase;
+			/*padding: 0.7em 1.3em;
+			margin: 1.3em 0;*/
+		}
+		.second img {
+			display: block;
+			/*width: 70%;*/
+			border-radius: 50%;
+			height: auto;
+			margin: 0 auto 20px auto;
+		}
+		#top-link a {
+			display: block;
+			display: none;
+			z-index: 999; 
+			position: fixed;
+			top: 0;
+			right: 0;
+			padding: 6px;
+			background-color: #FB4951;
+			opacity: 0.8;
+			font-size: 26px;
+			text-align: center;
+			color: #fff;
+		}
+
+		/* Large */
+		@media (min-width: 641px) {
+			body {
+				background-attachment: fixed;
+			}
+			.menu {
+				height: 100vh;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			.menu a {
+				font-size: 0.9em;
+			}
+			.menu a i {
+				font-size: 2.5em;
+			}
+			
+			.second img {
+				width: auto;
+			}
+			#top-link {
+				display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="row full-width collapse">
+		<div class="large-2 medium-2 columns show-for-medium-up menu" id="menu-large">
+			<div class="icon-bar vertical four-up">
+				<a href="index.html" id="menu-1">
+					<i class="fa fa-home"></i>
+					<label>Home</label>
+				</a>
+				<a href="about.html" id="menu-2">
+					<i class="fa fa-pencil"></i><br>
+					<label>About</label>
+				</a>
+				<a id="menu-3">
+					<i class="fa fa-plus"></i><br>
+					<label>Get Involved</label>
+				</a>
+				<a id="menu-4">
+					<i class="fa fa-question fa-3x"></i><br>
+					<label>FAQ</label>
+				</a>
+			</div>
+			<p class="language"><a href="">中文</a> <a href="">English</a></p>
+			<div class="icon-bar vertical one-up cr-logo">
+				<a href="http://www.crossroads.org.hk">
+					<img src="http://placehold.it/190x190">
+					<label>By Crossroads Foundation</label>
+				</a>
+			</div>
+		</div>
+		<div class="large-14 medium-14 columns collapse" id="content">
+			<div class="off-canvas-wrap" data-offcanvas>
+				<div class="inner-wrap">
+					<nav class="tab-bar show-for-small menu-toggle">
+						<section class="left-small">
+							<a class="left-off-canvas-toggle menu-icon" href="#"><span></span> <h4 class="title">Menu</h4></a>
+						</section>
+					</nav>
+					<aside class="left-off-canvas-menu show-for-small menu">
+					  <div class="icon-bar vertical four-up">
+							<a href="index.html" id="menu-1">
+								<i class="fa fa-home"></i><br>
+								<label>Home</label>
+							</a>
+							<a href="about.html" id="menu-2">
+								<i class="fa fa-pencil"></i><br>
+								<label>About</label>
+							</a>
+							<a id="menu-3">
+								<i class="fa fa-plus"></i><br>
+								Get Involved</label>
+							</a>
+							<a id="menu-4">
+								<i class="fa fa-question fa-3x"></i><br>
+								<label>FAQ</label>
+							</a>
+						</div>
+						<p class="language"><a href="">中文</a> <a href="">English</a></p>
+						<div class="icon-bar vertical one-up cr-logo">
+							<a href="http://www.crossroads.org.hk">
+								<img src="http://placehold.it/190x190">
+								<label>By Crossroads Foundation</label>
+							</a>
+						</div>
+					</aside>
+					<div class="row">
+						<div class="large-8 large-offset-1 medium-offset-1 medium-15 columns first">
+							<h1>About the Project</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <a href="">quis nostrud exercitation ullamco</a> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+						<div class="large-4 large-offset-1 medium-15 medium-offset-1 columns second end">
+							<img src="http://placehold.it/200x200">
+							<h4>DJs Trip to Lebananon and Jordan</h4>
+							<p><a href="#" class="button small">Read more</a></p>
+						</div>
+					</div>
+					<div class="row last">
+						<div class="large-8 large-offset-1 medium-offset-1 medium-15 columns first">
+							<h2>Tempor incididunt ut labore et dolore</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h3>Consectetur adipisicing elit</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h4>Ut enim ad minim veniam</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p><a href="#" class="button large">Start offering your goods</a></p>
+						</div>
+						<div class="large-4 large-offset-1 medium-15 medium-offset-1 columns second end">
+							<img src="http://placehold.it/200x200">
+							<h4>Crossroads computers open new technology center</h4>
+							<p><a href="#" class="button small">Read more</a></p>
+						</div>
+					</div>
+					<a class="exit-off-canvas show-for-small"></a>
+					<div id="top-link"><a href="#content"><i class="fa fa-arrow-up"></i></a></div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/foundation/js/foundation.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// Show the 'Top' link
+			if (matchMedia(Foundation.media_queries['small']).matches){
+				$(document).scroll(function() {
+					if ($(document).scrollTop() >= 150) {
+						$('#top-link a').show();
+					} else {
+						$('#top-link a').hide();
+					}
+				});
+			};
+
+			
+		});
+	</script>
+</body>
+</html>

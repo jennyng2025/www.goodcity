@@ -25,15 +25,11 @@
 		.menu {
 			background-color: #FFF;
 		}
-		.menu ul {
+		.menu div {
 			width: 100%;
 			overflow: hidden;
-			margin: 0;
-			padding: 0;
-			list-style-type: none;
-			background-color: #002450;
 		}
-		.menu li {
+		.menu a {
 			display: block;
 			min-height: 37px;
 			height: auto!important;
@@ -43,27 +39,53 @@
 			text-transform: uppercase;
 			text-align: center;
 			color: #FFF;
+			text-decoration: none;
 		}
-		.menu li i {
+		.menu a i {
 			font-size: 2.8em;
 			color: #FFF;
 			padding-bottom: 8px
 		}
-		.menu li#menu-1 {
+		.menu a label {
+			color: #FFF;
+		}
+		.menu a#menu-1 {
 			display: block;
 			min-height: 60px;
 			height: auto!important;
 			height: 60px;
 			background-color: #FB4951;
 		}
-		.menu li#menu-2 {
+		.menu a#menu-2 {
 			background-color: #0A3A61
 		}
-		.menu li#menu-3 {
+		.menu a#menu-3 {
 			background-color: #466684
 		}
-		.menu li#menu-4 {
+		.menu a#menu-4 {
 			background-color: #97A7B9
+		}
+		.language {
+			padding: 15px 0;
+			text-align: center;
+		}
+		.language a {
+			display: inline!important;
+			color: #888;
+			text-decoration: underline;
+			text-transform: none;
+		}
+		.cr-logo a label {
+			color: #888;
+			text-transform: none;
+			text-decoration: underline;
+		}
+		.cr-logo img {
+			display: block;
+			width: 80%;
+			border-radius: 50%;
+			height: auto;
+			margin: 0 auto 5px auto;
 		}
 		.left-off-canvas-menu {
 			position: fixed;
@@ -83,8 +105,8 @@
 			padding-left: 0.4em;
 		}
 		.menu-toggle {
-			position: fixed;
-			z-index: 999;
+			/*position: fixed;
+			z-index: 999;*/
 		}
 		.menu-toggle section {
 			border: 0;
@@ -215,6 +237,15 @@
 			text-align: center;
 			color: #fff;
 		}
+		.language {
+			text-align: center;
+		}
+		.language a {
+			display: inline-block;
+			color: #888;
+			text-decoration: underline;
+			text-transform: none;
+		}
 
 		/* Large */
 		@media (min-width: 641px) {
@@ -272,10 +303,10 @@
 				left: 0;
 				top: 0;
 			}
-			.menu li {
+			.menu a {
 				font-size: 0.9em;
 			}
-			.menu li i {
+			.menu a i {
 				font-size: 2.5em;
 			}
 			#intro {
@@ -312,24 +343,31 @@
 <body>
 	<div class="row full-width collapse">
 		<div class="large-2 medium-2 columns show-for-medium-up menu" id="menu-large">
-			<ul>
-				<li id="menu-1">
-					<i class="fa fa-home"></i><br>
-					Home
-				</li>
-				<li id="menu-2">
+			<div class="icon-bar vertical four-up">
+				<a href="index.html" id="menu-1">
+					<i class="fa fa-home"></i>
+					<label>Home</label>
+				</a>
+				<a href="about.html" id="menu-2">
 					<i class="fa fa-pencil"></i><br>
-					About
-				</li>
-				<li id="menu-3">
+					<label>About</label>
+				</a>
+				<a id="menu-3">
 					<i class="fa fa-plus"></i><br>
-					Get Involved
-				</li>
-				<li id="menu-4">
+					<label>Get Involved</label>
+				</a>
+				<a id="menu-4">
 					<i class="fa fa-question fa-3x"></i><br>
-					FAQ
-				</li>
-			</ul>
+					<label>FAQ</label>
+				</a>
+			</div>
+			<p class="language"><a href="">中文</a> <a href="">English</a></p>
+			<div class="icon-bar vertical one-up cr-logo">
+				<a href="http://www.crossroads.org.hk">
+					<img src="http://placehold.it/190x190">
+					<label class="show-for-large-up">By Crossroads Foundation</label>
+				</a>
+			</div>
 		</div>
 		<div class="large-14 medium-14 columns collapse" id="content">
 			<div class="off-canvas-wrap" data-offcanvas>
@@ -340,24 +378,31 @@
 						</section>
 					</nav>
 					<aside class="left-off-canvas-menu show-for-small menu">
-					  <ul>
-							<li id="menu-1">
+					  <div class="icon-bar vertical four-up">
+							<a id="menu-1">
 								<i class="fa fa-home"></i><br>
-								Home
-							</li>
-							<li id="menu-2">
+								<label>Home</label>
+							</a>
+							<a href="about.html" id="menu-2">
 								<i class="fa fa-pencil"></i><br>
-								About
-							</li>
-							<li id="menu-3">
+								<label>About</label>
+							</a>
+							<a id="menu-3">
 								<i class="fa fa-plus"></i><br>
-								Get Involved
-							</li>
-							<li id="menu-4">
+								Get Involved</label>
+							</a>
+							<a id="menu-4">
 								<i class="fa fa-question fa-3x"></i><br>
-								FAQ
-							</li>
-						</ul>
+								<label>FAQ</label>
+							</a>
+						</div>
+						<p class="language"><a href="">中文</a> <a href="">English</a></p>
+						<div class="icon-bar vertical one-up cr-logo">
+							<a href="http://www.crossroads.org.hk">
+								<img src="http://placehold.it/190x190">
+								<label>By Crossroads Foundation</label>
+							</a>
+						</div>
 					</aside>
 					<div class="screen current" id="intro">
 						<div id="intro-text">
@@ -455,12 +500,12 @@
 			       $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
 			         location.hash = target;
 			         $('.scroll').hide();
+			         $(target).find('.scroll').show();
 			       });
 			     });
 			   }
 			 }
 			});
-			
 			// Use the first element that is "scrollable"
 			function scrollableElement(els) {
 			 for (var i = 0, argLength = arguments.length; i <argLength; i++) {
@@ -493,7 +538,7 @@
 					left: ((width2/2) + (width1)) + "px"
 				});
 			});
-			$('.screen').mouseover(function(){
+			$('.screen').on('scroll mouseenter', function(linkScroll){
 				$('.scroll').hide();
 				var linkprev = $(this).prev().attr('id');
 				var linknext = $(this).next().attr('id');

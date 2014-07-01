@@ -10129,7 +10129,7 @@ meta.foundation-mq-topbar {
   bottom: 0;
   position: absolute;
   overflow-y: auto;
-  background: #333333;
+  background: white;
   z-index: 1001;
   box-sizing: content-box;
   transition: transform 500ms ease 0s;
@@ -10155,7 +10155,7 @@ meta.foundation-mq-topbar {
   bottom: 0;
   position: absolute;
   overflow-y: auto;
-  background: #333333;
+  background: white;
   z-index: 1001;
   box-sizing: content-box;
   transition: transform 500ms ease 0s;
@@ -10195,7 +10195,7 @@ ul.off-canvas-list li a {
   display: block;
   padding: 0.66667rem;
   color: rgba(255, 255, 255, 0.7);
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid #bfbfbf;
   transition: background 300ms ease;
 }
 /* line 231, ../bower_components/foundation/scss/foundation/components/_offcanvas.scss */
