@@ -1,0 +1,1 @@
+$(document).foundation(),$(document).ready(function(){matchMedia(Foundation.media_queries.small).matches&&$(document).scroll(function(){$(document).scrollTop()>=150?$("#top-link a").show():$("#top-link a").hide()})});

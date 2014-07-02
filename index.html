@@ -145,27 +145,6 @@
 			position: relative;
 			text-align: center;
 		}
-		#video-background { 
-			position: absolute;
-			bottom: 0px; 
-			right: 0px; 
-			min-width: 100%; 
-			min-height: 100%; 
-			width: auto; 
-			height: auto; 
-			overflow: hidden;
-			z-index: 1;
-		}
-		#video-overlay {
-			opacity: 0.7;
-			z-index: 2;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #002450;/*0A3A61*/
-		}
 		#intro-text {
 			z-index: 3;
 			width: 100%;
@@ -337,6 +316,27 @@
 			#top-link {
 				display: none;
 			}
+			#video-background { 
+				position: absolute;
+				bottom: 0px; 
+				right: 0px; 
+				min-width: 100%; 
+				min-height: 100%; 
+				width: auto; 
+				height: auto; 
+				overflow: hidden;
+				z-index: 1;
+			}
+			#video-overlay {
+				opacity: 0.5;
+				z-index: 2;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #002450;
+			}
 		}
 	</style>
 </head>
@@ -415,8 +415,8 @@
 							</div>
 						</div>
 						<video type="video/webm;codecs='vp8, vorbis'" class="show-for-large-up" id="video-background" preload="auto" preload autoplay loop muted>
-							<source src="/assets/media/test.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
-							<source src="/assets/media/test.webm" type="video/webm; codecs=vp8,vorbis">
+							<source src="/assets/media/preview.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+							<source src="/assets/media/preview.webm" type="video/webm; codecs=vp8,vorbis">
 						</video>
 						<div class="show-for-large-up" id="video-overlay"></div>
 					</div>
@@ -473,7 +473,7 @@
 	</div>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/foundation/js/foundation.min.js"></script>
-	<script src="/js/app.js"></script>
+	<script src="/js/min/app-ck.js" async></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 
@@ -546,19 +546,7 @@
 				$(this).find('.scroll-down').attr('href',linknext);
 				$(this).find('.scroll').show();
 			});
-			
-			// Show the 'Top' link
-			if (matchMedia(Foundation.media_queries['small']).matches){
-				$(document).scroll(function() {
-					if ($(document).scrollTop() >= 150) {
-						$('#top-link a').show();
-					} else {
-						$('#top-link a').hide();
-					}
-				});
-			};
 
-			
 		});
 	</script>
 </body>

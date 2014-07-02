@@ -275,23 +275,6 @@
 	</div>
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/foundation/js/foundation.min.js"></script>
-	<script src="/js/app.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			
-			// Show the 'Top' link
-			if (matchMedia(Foundation.media_queries['small']).matches){
-				$(document).scroll(function() {
-					if ($(document).scrollTop() >= 150) {
-						$('#top-link a').show();
-					} else {
-						$('#top-link a').hide();
-					}
-				});
-			};
-
-			
-		});
-	</script>
+	<script src="/js/min/app-ck.js" async></script>
 </body>
 </html>
