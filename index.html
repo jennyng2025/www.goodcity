@@ -9,11 +9,7 @@
 	<style>
 		body {
 			width: 100%;
-			height: 100%;
 			background-image: none;
-		}
-		#content {
-			min-height:100vh;
 		}
 		.screen {
 			width: 100%;
@@ -104,7 +100,13 @@
 		}
 
 		/* Large */
-		@media (min-width: 641px) {
+		@media (min-width: 1025px) {
+			/*body {
+				height: 100%;
+			}
+			#content {
+				min-height:100vh;
+			}*/
 			.scroll, 
 			.scroll-text {
 				display: block;
@@ -147,6 +149,7 @@
 			}
 			.screen.row .columns.second {
 				padding-top: 10%;
+				padding-bottom: 5%;
 			}
 			.second img {
 				width: 80%;
@@ -205,6 +208,12 @@
 				height: 100%;
 				background-color: #002450;
 			}
+			#image-credit {
+				position: absolute;
+				bottom: 5%;
+				right: 5%;
+				z-index: 2;
+			}
 		}
 	</style>
 </head>
@@ -232,8 +241,8 @@
 			<p class="language"><a href="" lang="zh-hant" hreflang="zh-hant">中文</a> <a href="">English</a></p>
 			<div class="icon-bar vertical one-up cr-logo">
 				<a href="http://www.crossroads.org.hk">
-					<img src="assets/images/Global-Distribution_logo.gif" class="show-for-large-up">
-					<label class="show-for-large-up">By Crossroads Foundation</label>
+					<img src="/assets/images/Global-Distribution_logo.gif" class="show-for-portrait">
+					<label>By Crossroads Foundation</label>
 				</a>
 			</div>
 		</div>
@@ -267,7 +276,7 @@
 						<p class="language"><a href="" lang="zh-hant" hreflang="zh-hant">中文</a> <a href="">English</a></p>
 						<div class="icon-bar vertical one-up cr-logo">
 							<a href="http://www.crossroads.org.hk">
-								<img src="assets/images/Global-Distribution_logo.gif" class="show-for-large-up">
+								<img src="/assets/images/Global-Distribution_logo.gif" class="show-for-portrait">
 								<label>By Crossroads Foundation</label>
 							</a>
 						</div>
@@ -286,6 +295,7 @@
 							<source src="/assets/media/preview.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
 							<source src="/assets/media/preview.webm" type="video/webm; codecs=vp8,vorbis">
 						</video>
+						<div class="show-for-large-up" id="image-credit" lang="zh-hant">壹週刊 高仲明攝</div>
 						<div class="show-for-large-up" id="video-overlay"></div>
 					</div>
 					<div class="row screen" id="app-items">
