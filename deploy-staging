@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Removing existing files" && \
+ssh deployer@www-staging.goodcity.hk -p 59207 'rm -rf /var/www/html/www.goodcity.hk/*' && \
+echo "Uploading new files" && \
+scp -r -P 59207 * deployer@www-staging.goodcity.hk:/var/www/html/www.goodcity.hk/
