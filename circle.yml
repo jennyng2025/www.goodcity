@@ -1,3 +1,7 @@
+test:
+  override:
+    - bash echo 'No tests to run...'
+
 deployment:
   staging:
     branch: master
