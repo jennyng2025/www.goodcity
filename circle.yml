@@ -10,4 +10,4 @@ deployment:
   live:
     branch: live
     commands:
-      - bundle exec cap live deploy
+      - bundle exec cap production deploy
